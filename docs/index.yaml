@@ -3,12 +3,12 @@ entries:
   datahub-seeroush:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-05-03T10:26:31.189678-05:00"
+    created: "2023-05-03T10:29:18.276797-05:00"
     description: A Helm chart for Kubernetes
-    digest: c7649595477e4781bafb76429350f9e9153d75213b98d20a5c4dd852fbb738f7
+    digest: d7c53702aec0ea4186e807d7a7be37681e4f9048920a6b38c424e9822fba3b05
     name: datahub-seeroush
     type: application
     urls:
     - https://seeroush.github.com/datahub-helm/datahub-seeroush-0.1.0.tgz
     version: 0.1.0
-generated: "2023-05-03T10:26:31.188426-05:00"
+generated: "2023-05-03T10:29:18.276158-05:00"
