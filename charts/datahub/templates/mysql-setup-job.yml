@@ -54,7 +54,15 @@ spec:
           imagePullPolicy: {{ .Values.mysqlSetupJob.image.pullPolicy | default "IfNotPresent" }}
           env:
             - name: MYSQL_USERNAME
-              value: {{ .Values.mysqlSetupJob.username | default .Values.global.sql.datasource.username | quote }}
+              {{- $usernameValue := (.Values.sql).datasource.username.value | default .Values.global.sql.datasource.username.value }}
+              {{- if $usernameValue }}
+              value: {{ $usernameValue | quote }}
+              {{- else }}
+              valueFrom:
+                secretKeyRef:
+                  name: "{{ (.Values.sql).datasource.username.secretRef | default .Values.global.sql.datasource.username.secretRef }}"
+                  key: "{{ (.Values.sql).datasource.username.secretKey | default .Values.global.sql.datasource.username.secretKey }}"
+              {{- end }}
             - name: MYSQL_PASSWORD
               {{- $passwordValue := (.Values.mysqlSetupJob.password).value | default .Values.global.sql.datasource.password.value }}
               {{- if $passwordValue }}
