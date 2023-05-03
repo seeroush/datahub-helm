@@ -9,6 +9,6 @@ entries:
     name: datahub-seeroush
     type: application
     urls:
-    - https://seeroush.github.com/datahub-helm/datahub-seeroush-0.1.0.tgz
+    - datahub-seeroush-0.1.0.tgz
     version: 0.1.0
 generated: "2023-05-03T10:29:18.276158-05:00"
